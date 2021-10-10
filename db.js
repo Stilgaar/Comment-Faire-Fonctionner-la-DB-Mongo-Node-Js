@@ -17,6 +17,9 @@ const databaseName = "user"
 
 const DB_URI = `${protocolMongo}://${hostMongo}:${portMongo}/${databaseName}`
 
+// et la c'est la commande qui envoi les données sur le mongo. 
+// je sais plus trop à quoi sert le catch(console.log) mais antonin l'avait écris alors s'il l'écris
+// c'est que ça devait être pas mal.
 mongoose.connect(DB_URI).then(() => {
     console.log('*** CONNECTED TO DB ***')
     UserModel.insertMany(data).then(() => console.log("done")).catch(console.log)
